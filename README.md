@@ -1,3 +1,3 @@
 "#Portfolio-Website" 
-
-My name is Jason and this is github tutorial readme edits. 
+need to add cool transitions
+screenshots of projects with descriptions
