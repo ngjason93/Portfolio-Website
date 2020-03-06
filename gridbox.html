@@ -1,99 +1,24 @@
 <!DOCTYPE html>
-<style>
-
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: Oxanium,serif;
-  box-sizing: border-box;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 200px 200px 200px ;
-  grid-template-rows: 200px 200px 200px ;
-}
-
-.img1 {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  width: 100%;
-  height: 100%;
-  object-fit:cover;
-}
-
-
-.navbar{
-  grid-column-start: 2;
-  grid-colum-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  font-size: 15px;
-  align-self: center;
-  justify-self: center;
-  /* display: flex;
-  flex-wrap: wrap */
-  ;
-
-}
-
-.footer {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 4;
-}
-.Q {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  justify-self:center;
-  align-self:baseline;
-  color: #FFDF00;
-  font-size: 20px;
-}
-ul {
-  list-style-type: none;
-  width: 200px;
-
-
-
-}
-li {
-  display: inline-block;
-  border: 2px solid black;
-
-}
-li a{
-  color: #FFDF00;
-
-}
-</style>
-
 
 <html>
 <head>
+  <link rel="stylesheet" href="styles.css">
   <title> Jason Ng | Developer </title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
 </head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxanium">
 
 
-<div class="wrapper">
-  <img class="img1" src="C:\Users\J\Desktop\my model portfolio\New folder\resize\1.jpg" alt="image of me staring into the camera">
-  <p class="Q">Jason Ng | Portfolio</p>
+<div class="wrapper"> <!-- origional image source full size "C:\Users\J\Desktop\my model portfolio\New folder\resize\1.jpg" -->
+  <img class="img1" src="https://i.imgur.com/TgEkE25.jpg" alt="image of me staring into the camera">
+  <p class="Q">Jason Ng Portfolio</p>
   <ul class="navbar">
-    <li> <a href="#broken">Home </a></li>
     <li> <a href="#alsobroken">Portfolio </a></li>
-    <li> <a href="#aboutme">About </a></li>
+    <li> <a href="#aboutme">About</a></li>
+    <li> <a href="#resume">Resume</a></li>
   </ul>
-  <button class="footer"> End remarks go here </button>
 
 </div>
 <footer> This is a footer </footer>
