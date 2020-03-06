@@ -1,84 +1,9 @@
 <!DOCTYPE html>
-<style>
-
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: Oxanium,serif;
-  box-sizing: border-box;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 141px 141px 141px;
-  grid-template-rows: repeat(9, 90px) ;
-}
-
-.img1 {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 10;
-  width: 100%;
-  height: 100%;
-  object-fit:cover;
-}
 
 
-.navbar{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 6;
-  grid-row-end: 7;
-  font-size: 20px;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-
-
-}
-
-
-.Q {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 4;
-  grid-row-end: 5;
-  justify-self:center;
-  align-self:flex-end;
-  color: #FFDF00;
-  font-size: 30px;
-  background-color: black;
-  border-radius: 5px;
-}
-ul {
-  width: 200px;
-
-
-
-}
-li {
-  display: inline-block;
-  border: none;
-
-}
-li a{
-  color: orange;
-  background-color: black;
-
-
-}
-
-li a:hover {
-  opacity: .3;
-}
-
-footer {display:none;}
-
-</style>
 <html>
 <head>
+  <link rel="stylesheet" href="styles.css">
   <title> Jason Ng | Developer </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -88,18 +13,46 @@ footer {display:none;}
 
 
 <div class="wrapper"> <!-- origional image source full size "C:\Users\J\Desktop\my model portfolio\New folder\resize\1.jpg" -->
-  <img class="img1" src="https://i.imgur.com/TgEkE25.jpg" alt="jason's face">
+  <img class="img1" src="https://i.imgur.com/TgEkE25.jpg" alt="image of me staring into the camera">
   <p class="Q">Jason Ng Portfolio</p>
   <ul class="navbar">
-    <li> <a href="#broken">Home </a></li>
-    <li> <a href="#alsobroken">Portfolio </a></li>
-    <li> <a href="#aboutme">About</a></li>
-    <li> <a href="#resume">Resume</a></li>
+    <li> <button id="about" onclick="unhidetwo(Id='hiddenabout')">About </button></li>
+    <li> <button id="portfolio">Portfolio</button></li>
+    <li> <button id="resume" onclick="window.open('https://www.dropbox.com/s/1toajszy7fj9du9/cv.pdf?dl=1#')">Resume</button></li>
   </ul>
+  <p id="hiddenabout"> Hi, my name is Jason. I am a junior web dev with experience in CSS, HTML, JS,
+       Github, Python, Flask, Selenium and am learning next technologies everyday. I've dabbeled in many
+       things from machine learning, to computer vision, scripting, and find every type of automation
+       amazing. I also enjoy my occasional drink from time to time and enjoy getting a good workout in.
+  </p>
+  <button id="close" onclick="hide2(Id)">X </button>
+
 
 </div>
-<footer> This is a footer </footer>
-
 
 </html>
 
+<script>
+function unhide(Id){
+  console.log(Id)
+  document.getElementById(Id).style.display ="grid"
+}
+
+function hide(Id){
+  console.log(Id)
+  document.getElementById(Id).style.display ="none"
+}
+function unhidetwo(Id){
+  unhide(Id)
+  unhide(Id='close')
+}
+
+function hidex(){
+  document.getElementById('close').style.display ="none"
+}
+/*make button to display and hide the x now*/
+function hide2(){
+  hide(Id)
+  hidex()
+}
+</script>
