@@ -1,219 +1,139 @@
 <!DOCTYPE html>
+<html>
 <style>
 
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: Oxanium,serif;
-  box-sizing: border-box;
-  font-size: 27px;
+#aboutme {
+  /* visibility: hidden; */
+  opacity:0;
 }
-
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(106px, 1fr));
-  grid-template-rows: repeat(10, minmax(50px,1fr));
-  max-width: 100vh;
-  max-height: 100vh;
-}
-
-.img1 {
-  grid-column-start: 1;
+#console{ grid-column-start: 2;
   grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 11;
-  width: 100%;
-  max-width:100vh;
-  height: 100%;
-  max-height: 100vh;
-  object-fit:cover;
-}
-
-.navbar{
-  grid-column-start:2;
-  grid-column-end: 3;
-  grid-row-start: 5;
-  grid-row-end:8;
-
-
-}
-
-
-.Q {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  align-self:flex-end;
-  color: #FFDF00;
-  /* font-size: 30px; */
-  background-color: black;
-  border-radius: 5px;
-}
-ul {
-  list-style-type: none;
-}
-
-}
-li {
-  display: inline-block;
-  border: none;
-
-
-}
-li button{
-  color: orange;
-  background-color: black;
-  font-size: .7rem;
-  padding: 2px;
-  border-radius: 2px;
-  border: 5px solid black;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 50px;
-
-
-
-
-
-}
-
-li button:hover {
-  font-size: 23px;
-}
-#close {
-  display: none;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-start: 2;
-  height: 45%;
-  width: 25%;
-  background color: yellow;
-  border: 3px solid black;
-  font-size: .8rem;
-  padding: 3px;
-  border-radius: 5px;
-  opacity: .8;
-}
-#close:hover{
-  font-size: 18px;
-}
-#hiddenabout {
-  display: none;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 2;
+  grid-row-start:6;
   grid-row-end: 8;
-  height: 100%;
-  align-self:flex-end;
-  color: #FFDF00;
-  font-size: .8rem;
-  background-color: black;
-  border-radius: 5px;
+  margin-top: 1.3rem;
+  /* text-align: center; */
+  font-size: .9rem;
+  padding: 1rem;
+  /* margin: auto; */
+  border-top: 8px solid gray;
+  background: black;
+  color: white;
+  display: none;
+
 }
-#wrapperforhiddentext{
-  display:none;
+#container{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+h1{
+  display: block;
+  text-align: center;
+}
+img{
   grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 7;
+  grid-column-end:6;
+  grid-row-start:1;
+  grid-row-end: 8;
+  width: 100%;
+  height: 100%;
 }
-@media screen and (min-width:414px){
-  .img1{
-    height:auto;
-  }
-  *{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: Oxanium,serif;
-    box-sizing: border-box;
-    font-size: 30px;
-  }
-  li button {
-    color: orange;
-    background-color: black;
-    font-size: .7rem;
-    padding: 2px;
-    border-radius: 2px;
-    border: 5px solid black;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    min-height: 50px;
+#navbar {
+  text-decoration: none;
+  width: 100%;
+  list-style: none;
+  margin-top: 0px;
+  float: left;
+  padding: 0px;
+  overflow: hidden;
+}
+#navbar li{
+  float: left;
+  margin: .3rem;
+  vertical-align: middle;
 
-
-
-
-
-  }
 
 }
+#navbar a{
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  min-height: 60px;
+  text-align: center;
+  background-color: gray;
 
+  padding: auto;
+  font-size: 1.3rem;
+
+
+}
+#navbar a:hover{
+  font-size: 1.3rem;
+}
 </style>
 
-<html>
+
 <head>
-  <!-- <link rel="stylesheet" href="styles.css"> -->
-  <!-- <link rel="stylesheet" media="screen and (min-width:500px)" href="over500.css"> -->
   <title> Jason Ng | Developer </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxanium">
 
 
-<div class="wrapper"> <!-- origional image source full size "C:\Users\J\Desktop\my model portfolio\New folder\resize\1.jpg" -->
-  <img class="img1" src="https://i.imgur.com/TgEkE25.jpg" alt="image of me staring into the camera">
-  <p class="Q">Jason Ng Portfolio</p>
-  <ul class="navbar">
-    <li> <button id="about" onclick="unhidetwo(Id='hiddenabout')">About </button></li>
-    <li> <button id="portfolio">Portfolio</button></li>
-    <li> <button id="resume" onclick="window.open('https://www.dropbox.com/s/1toajszy7fj9du9/cv.pdf?dl=1#')">Resume</button></li>
-    <li> <button id="contactme">Contact</button></li>
-  </ul>
+<header>
+    <ul id="navbar">
+      <li> <a href="#aboutme" onclick='unhide()'>About</a></li>
+      <li> <a href="#alsobroken">Portfolio </a></li>
+      <li> <a href="#resume">Contact</a></li>
+    </ul>
 
-  <div id="wrapperforhiddentext">
-    <p id="hiddenabout"> Hi, my name is Jason. I am a junior web dev with experience in CSS, HTML, JS,
-         Github, Python, Flask, Selenium and am learning new technologies everyday. I've dabbeled in many
-         things from machine learning, to computer vision, scripting, and find every type of automation
-         amazing. I also enjoy my occasional drink from time to time and enjoy getting a good workout in.</p></div>
-  <button id="close" onclick="hide2(Id)">X </button>
-  <!-- Create a form that allows me to take input -->
+</header>
 
-  <div id=""
-
+<body>
+  <h1> Jason Ng | Web Developer </h1>
+<hr>
+<div id='container'>
+<img id='mainimg'src='https://i.imgur.com/Fw3ZjKr.png', alt='Jason/Dev face'>
+<img id='aboutme'src='https://i.imgur.com/pGFw0sw.png', alt='aboutme'>
+<!-- <img src='https://i.imgur.com/A0yvOAF.png' alt='Jason/Dev face'> -->
+<div id='console'> </div>
 
 </div>
 
-</html>
-
 <script>
-function unhide(Id){
-  console.log(Id)
-  document.getElementById(Id).style.display ="grid"
-}
 
-function hide(Id){
-  console.log(Id)
-  document.getElementById(Id).style.display ="none"
-}
-function unhidetwo(Id){
-  unhide(Id)
-  unhide(Id='close')
-  unhide('wrapperforhiddentext')
-}
+function unhide(){
+  document.getElementById('aboutme').style.opacity= '1';
+  document.getElementById('mainimg').style.display= 'none';
+  document.getElementById('console').style.display= 'grid';
 
-function hidex(){
-  document.getElementById('close').style.display ="none"
+  typeWriter(txt);
+  console.log(i)
+
+
+
+
+
 }
-/*make button to display and hide the x now*/
-function hide2(){
-  hide(Id)
-  hidex()
+var i = 0;
+var txt = 'Jason = Person("Jason", aboutme) ...... Jason.introduce() ... Hi my name is Jason, I am a Jr front end developer who enjoys spending time with friends, watching and  playing basketball and an occasional drink'; /* The text */
+var speed = 100; /* The speed/duration of the effect in milliseconds */
+function typeWriter(input) {
+  if (i < txt.length) {
+    document.getElementById("console").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
 }
+// function showTextBubbles(whichbubble){
+//
+// }
+
 </script>
+</html>
