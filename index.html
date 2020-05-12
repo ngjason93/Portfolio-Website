@@ -59,18 +59,27 @@ body{
 h1{
   display: block;
   text-align: center;
+  font-size: 1.7rem;
   color: #D6ED17FF;
   animation-name: colorin;
   animation-duration: 2s;
 }
 
 @keyframes colorin{
-  from {color: gray; font-size: .1rem}
+  from {color: yellow; font-size: .1rem}
   to {color:#606060FF;}
 }
 
 
+#link{
+  display: none;
+  font-size: .9 rem;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 6;
+  grid-row-end: 7;
 
+}
 
 .picofme{
   grid-column-start: 1;
@@ -115,10 +124,11 @@ h1{
 
 #navbar a{
   display: inline-block;
+  font-family: 'PT Sans', sans-serif;
 
   color: light gray;
   text-align: center;
-  padding: 1.6rem;
+  padding: 1.4rem;
   /* border: 1px solid black; */
   /* border-radius: 1.5rem; */
   text-decoration: none;
@@ -148,9 +158,22 @@ h1{
 
 }
 
-.prodesc {
+#kingsdesc {
   display: none;
-  font-size: .9 rem;
+  margin-right: 4px;
+  padding: 3px;
+  font-size: 1.1rem;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 6;
+  grid-row-end: 8;
+  animation-name: colorin;
+  color: black;;
+  animation-duration: 1s;
+  margin: .2rem;
+  font-family: 'PT Sans', sans-serif;
+  background: white;
+  border-radius: .8rem;
 
 }
 
@@ -173,6 +196,11 @@ display: none;
   padding: .5rem;
   margin: .5rem ;
   min-height: 100px
+  border: 1px dotted yellow;
+}
+#Contact a{
+  height: 100px;
+  width: 100px;
 }
 
 #skills{
@@ -198,6 +226,8 @@ display: none;
   padding: .5rem;
   margin: .1rem;
 }
+
+
 </style>
 
 
@@ -206,6 +236,8 @@ display: none;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -231,17 +263,17 @@ display: none;
 <div id='console'> </div>
 <div id='console2'> </div>
 
-<div class='prodesc' id='kingdesc'> A game created when we wanted to play the drinking game Kings Cup but did not have cards. The game works on mobile and desktop. Users can swipe through or click a button for the next card'</div>
+<h2 class='prodesc' id='kingsdesc'> <a id='link'href='https://ngjason93.github.io/Kings-Browser-game/'>Link to game</a> A game created when my friends and I wanted to play Kings Cup(drinking game) but did not have cards. The game works on mobile and desktop. Users swipe through or click a button for the next card.</h2>
 
 <h2 id='skills'><ul>
-  <li> HTML</li>
-  <li> CSS</li>
-  <li>JS</li>
-  <li> GitHub</li>
-  <li> AJAX</li>
-  <li>XML</li>
   <li>Python</li>
-  <li> Flask</li>
+  <li>JS</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>GitHub</li>
+  <li>Flask</li>
+  <li>AJAX</li>
+  <li>XML</li>
   <li>SQLAlchemy</li>
   <li>Sqlite</li>
   <li>JSON</li>
@@ -271,8 +303,9 @@ function unhide(){
   document.getElementById('mainimg').style.display= 'none';
   document.getElementById('console').style.display= 'grid';
   document.getElementById('console2').style.display= 'grid';
+  document.getElementById('kingsdesc').style.display='none';
   setTimeout(function(){
-    document.getElementById('console2').innerHTML= 'Hi my name is Jason, I am a Jr developer who enjoys hanging out with friends, playing basketball, working out and an occasional drink. My skills are:';
+    document.getElementById('console2').innerHTML= 'Hi my name is Jason, I am a Jr developer who enjoys hanging out with friends, playing basketball and working out. My skills are:';
     document.getElementById('skills').style.display = 'grid';
 
   },7000)
@@ -302,14 +335,18 @@ function portfolioLoad(){
   hideall()
   document.getElementById('mainimg').style.opacity = 0;
   document.getElementById('kings').style.display = 'grid';
+  document.getElementById('kingsdesc').style.display ='block';
+  document.getElementById('link').style.display ='block';
+
 
 
 
 }
 
 function showSocials(){
+  hideall()
   document.getElementById('Contact').style.display= 'block';
-  console.log('I GOT HERE')
+
 }
 
 </script>
