@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 <style>
-@media (min-width: 520px) and (max-width: 800px){
-  #Contact {
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 6;}
-}
-@media(min-width: 650px) and (max-width: 768px){
-  #Contact {
-    grid-column-start: 4;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 6;}
-}
+
+
+
+  #container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  }
+
 #aboutme {
   /* visibility: hidden; */
   display: none;
@@ -61,7 +58,7 @@ body{
   margin: .5rem ;
   border-radius: 1rem;
   float: left;
-  background: orange;
+  background: #FFB732;
   font-family: 'PT Sans', sans-serif;
 
 
@@ -83,13 +80,7 @@ body{
 
 }
 
-#container{
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-}
+
 
 h1{
   display: block;
@@ -100,6 +91,7 @@ h1{
   animation-name: colorin;
   animation-duration: 2s;
   background-color: black;
+
 }
 
 @keyframes colorin{
@@ -140,26 +132,39 @@ h1{
 
 #kings{
   width: 100%;
-  max-height: 365px;
+  max-height: 440px;
   display: none;
+  object-fit: stretch;
   max-width: 425px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 8;
 }
 
+
 #navbar {
+  border:0px;
   text-decoration: none;
   width: 100%;
   list-style: none;
   margin-top: 0px;
+  margin-left: -10px;
+  margin-right: -10px;
   padding: 0px;
   overflow: hidden;
   cursor: pointer;
-  background: #606060FF;
+  background: #D6ED17FF;
   text-align: center;
+
 
 }
 #navbar li{
-  float: left;
-  vertical-align: middle;
+  display: inline-block;
+  margin: 0px;
+  width: 30vw;
+
+
 }
 
 #navbar a{
@@ -175,8 +180,8 @@ h1{
   text-align: center;
   background-color: #D6ED17FF;
   padding: auto;
-  font-size: 1.3rem;
-  border-right: 1px solid #606060FF;
+  font-size: 1.2rem;
+  /* border-right: 1px solid #606060FF; */
 
 
 }
@@ -197,13 +202,11 @@ h1{
   align-items: center;
 
 }
-
 #kingsdesc {
   display: none;
-  margin-right: 4px;
   padding: 3px;
   max-width: 420px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   grid-column-start: 1;
   grid-column-end: 6;
   grid-row-start: 6;
@@ -214,9 +217,11 @@ h1{
   margin: .2rem;
   font-family: 'PT Sans', sans-serif;
   background: white;
-  border-radius: .8rem;
+  border: 1px solid white;
 
 }
+
+
 
 
 #skills{
@@ -242,6 +247,53 @@ h1{
   padding: .5rem;
   margin: .1rem;
 }
+
+@media (max-width: 500px){
+  #kings{max-height: 400px;border: 1px solid pink;}
+}
+
+@media (min-width: 700px) and (max-width: 940px){
+  #container{grid-template-columns: 23% 425px 23%;}
+  .picofme{grid-column-start: 2; grid-column-end: 3;}
+  #console{grid-column-start: 2; grid-column-end: 3;}
+  #console2{grid-column-start: 2; grid-column-end: 3;}
+  #kings{grid-column-start: 2; grid-column-end: 3;}
+  #kingsdesc{grid-column-start: 2;grid-column-end: 3;}
+  #skills{grid-column-start: 2; grid-column-end: 3;}
+  #Contact{grid-column-start: 2; grid-column-end: 3;}
+}
+
+
+@media (min-width: 940px) and (max-width: 1400px){
+  #container {grid-template-columns: 50% 50%;}
+  .picofme{margin-left: 45px;}
+  #console{margin-left: 45px; font-size: 1.1rem;}
+  #console2{margin-left: 45px;font-size: 1.1rem;}
+  #kings {grid-column-start: 2; grid-column-end:3; }
+  #kingsdesc{grid-column-start: 2; grid-column-end:3; font-size: 1.2rem;}
+  #Contact{grid-row-start: 9;}
+  }
+
+@media (min-width: 1401px){
+  #container {grid-template-columns:40% 40% 20%;
+    grid-gap: 10px;}
+    h1{font-size: 2rem;}
+  #Contact {grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start:1;}
+  #aboutme{max-width: 500px;}
+  #kings{max-width: 500px; margin-left: 60px}
+  #console{max-width: 500px; font-size: 1.5rem;}
+  #console2{max-width: 500px;font-size: 1.3rem;}
+  #kingsdesc{max-width: 490px;margin-left: 60px; font-size: 1.4rem}
+  .picofme{margin-left: 45px;}
+  #console{margin-left: 45px;}
+  #console2{margin-left: 45px;}
+  #kings {grid-column-start: 2; grid-column-end:3; }
+  #kingsdesc{grid-column-start: 2; grid-column-end:3; }
+  }
+
+
 
 
 
@@ -270,10 +322,11 @@ h1{
 </header>
 
 <body>
-  <h1> Jason Ng | Web Developer </h1>
+  <h1> Jason Ng Web Developer </h1>
 <hr>
 <div id='container'>
-<img class='portex' id='kings' src='https://i.imgur.com/55BWJVA.png'>
+<img id='kings' src='https://i.imgur.com/55BWJVA.png'>
+
 <img id='mainimg' class='picofme'src='https://i.imgur.com/Fw3ZjKr.png', alt='Jason/Dev face'>
 <img id='aboutme'class='picofme' src='https://i.imgur.com/pGFw0sw.png', alt='aboutme'>
 <!-- <img src='https://i.imgur.com/A0yvOAF.png' alt='Jason/Dev face'> -->
@@ -294,12 +347,8 @@ h1{
   <li>SQLAlchemy</li>
   <li>Sqlite</li>
   <li>JSON</li>
-</ul>
+</ul></h2>
 
-</h2>
-
-
-</section>
 <div id='Contact'>
    <ul>
      <li><a href='https://github.com/ngjason93'> Github</a></li>
@@ -313,6 +362,13 @@ h1{
 
 </div>
 
+
+
+
+
+
+
+
 <script>
 
 function unhide(){
@@ -320,12 +376,13 @@ function unhide(){
   document.getElementById('mainimg').style.display= 'none';
   document.getElementById('console').style.display= 'grid';
   document.getElementById('console2').style.display= 'grid';
-  document.getElementById('kingsdesc').style.display='none';
+
+
   setTimeout(function(){
     document.getElementById('console2').innerHTML= 'Hi my name is Jason, I am a Jr developer who enjoys hanging out with friends, playing basketball and working out. My skills are:';
     document.getElementById('skills').style.display = 'grid';
 
-  },7500)
+  },6000)
   typeWriter(txt);
 }
 
@@ -343,26 +400,39 @@ function hideall(){
   document.getElementById('console').style.display='none';
   document.getElementById('console2').style.display='none';
   document.getElementById('aboutme').style.display='none';
-  document.getElementById('mainimg').style.display= 'block';
+  document.getElementById('mainimg').style.display= 'none';
 
 
 
 }
 function portfolioLoad(){
-  hideall()
-  document.getElementById('mainimg').style.opacity = 0;
+  var w = window.innerWidth;
+  console.log(w)
+  if (w<440||w<800){
+    document.getElementById('aboutme').style.display = 'none'
+    document.getElementById('mainimg').style.display = 'none'
+    console.log('gothere')
+  }
+  if (w>940){unhide()}
   document.getElementById('kings').style.display = 'grid';
   document.getElementById('kingsdesc').style.display ='block';
   document.getElementById('link').style.display ='block';
+}
+var wi = window.innerWidth;
 
-
-
-
+if (wi> 942){
+  portfolioLoad();
+  console.log('gothere');
+  unhide();
+  showSocials();
+  document.getElementById('navbar').style.display='none';
 }
 
+
+
+
 function showSocials(){
-  hideall()
-  document.getElementById('Contact').style.display= 'flex';
+  document.getElementById('Contact').style.display= 'grid';
 
 }
 
