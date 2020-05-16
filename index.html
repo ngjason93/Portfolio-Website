@@ -22,14 +22,14 @@
 }
 #header{height: 100%; background: black;color: white; font-size: 2vw; text-align: center; font-family: 'Amatic SC', cursive; text-align: left;padding: 1rem;}
 #container{height: 100vh;}
-.covercontent{background: black; position: absolute; height: 100%; width:100%;}
-.covercontent:hover{opacity:.5;}
+.covercontent{background: black; position: absolute; height: 100%; width:100%;opacity: .95;}
+.covercontent:hover{opacity:.2;}
 .covercontent:active{opacity:0}
 
 /* .imgtext{color: white; position: absolute; top: 60%; left: 45%; padding: 1rem; } */
-#absoluteline {position: absolute; top: 60%; width: 100%; z-index: 3; opacity: .6;}
+#absoluteline {position: absolute; top: 60%; width: 100%; z-index: 3; opacity: .7; }
 #absoluteline {list-style: none;}
-#absoluteline li{color: white; display:inline-block; width: 30vw; text-align: center; font-size: 1.4rem;   font-family: 'PT Sans', sans-serif;
+#absoluteline li{color: white; display:inline-block; width: 30vw; text-align: center; font-size: 1.4rem;   font-family: 'Amatic SC', cursive; ;
 }
 #navbar {position: absolute; right: 25px; color: white}
 #navbar ul{list-style: none; }
@@ -38,7 +38,7 @@
 #navbar div{text-decoration: none;  color: white; padding: 1vw;  font-family: 'Amatic SC', cursive; display:none;}
 
 #footer{display: inline-block; background: black; border-top: 1px solid white; padding:1vw }
-#footer li{text-align: center;list-style: none;display: inline-block;  font-size: 1vw; color: white; width: 10%; font-size: 1.4vw; width: 15vw; padding: 1vw; font-family: 'Amatic SC', cursive;}
+#footer button{border: none; background: black;text-align: center;list-style: none;display: inline-block;  font-size: 1vw; color: white; width: 10%; font-size: 1.4vw; width: 15vw; padding: 1vw; font-family: 'Amatic SC', cursive;}
 .console {font-family: 'Share Tech Mono', monospace; z-index: 3;border-bottom: .3vh solid gray; margin-right: 11px;border-top:1vh solid gray;color: white;background: black; top: 11%; width: 100%; border-right: .1vh solid gray;}
 
 
@@ -70,11 +70,12 @@
   #header{text-align: center; font-size: 7vw;}
   #navbar div{display:none;}
   #navbar a{font-size: 4vw;}
-  #footer li {font-size: 5vw; width: 25vw; padding: 1vw; font-family: 'Amatic SC', cursive;}
+  #footer button {font-size: 5vw; width: 25vw; padding: 1vw; font-family: 'Amatic SC', cursive; }
 
 }
-
-
+#pro1desc:hover {opacity: 1;}
+#pro2desc:hover {opacity: 1;}
+#projlink {font-size: 1.1vw; z-index: 3; background: white;border: 1px solid white; color: black; padding: .2vw; border-radius: .1vw; padding-bottom: 0;}
 </style>
 <head>
   <title> Jason Ng | Developer </title>
@@ -97,8 +98,8 @@
   <div id='absoluteline'>
     <ul>
       <li> About Me </li>
-      <li onclick='show1()'> Kings Cup </li>
-      <li onclick='show2()'> Tomato Wallet </li>
+      <li onclick='show1()'> Kings Cup <br> (click me) </li>
+      <li onclick='show2()'> Tomato Wallet <br> (clickme) </li>
     </ul>
   </div>
 
@@ -117,9 +118,9 @@
   </div>
 
 <footer id='footer' class='box footer'>
-  <li class='socials'> <a href='https://github.com/ngjason93'> Github</a> </li>
-  <li class='socials'> <a href='https://www.linkedin.com/in/jason-ng/'>Linkedin</a> </li>
-  <li class='socials' id='Contact'> Ngjason93@gmail.com </li>
+  <button class='socials' onclick='window.open("https://github.com/ngjason93")'> Github </button>
+  <button class='socials'  onclick='window.open("https://www.linkedin.com/in/jason-ng/")'> Linkedin </button>
+  <button class='socials' id='Contact'> Ngjason93@gmail.com </button>
   </footer>
 
 </body>
@@ -155,13 +156,13 @@ setTimeout(function(){
 
 
 function show1(){
-  showAboutme('Jason.KingsIntro()','pro1desc','<br> <br>A game I created when my friends and I wanted to play Kings Cup but had no cards. Has swipe function for mobile and click through for desktop. <br> <br> <a href="https://ngjason93.github.io/Kings-Browser-game/"> Link here </a>');
+  showAboutme('Jason.KingsIntro()','pro1desc','<br> <br>A game I created when my friends and I wanted to play Kings Cup but had no cards. Has swipe function for mobile and click through for desktop. <br> <br> <a id="projlink" href="https://ngjason93.github.io/Kings-Browser-game/"> Link here </a>');
 
 
   }
 
 function show2(){
-  showAboutme('Jason.TimeMoneyIntro', 'pro2desc', '<br> <br>A page I created with productivity in mind. Being productive generates  "time money" which can be spent for breaks (5 minutes per 1 productivity session).')
+  showAboutme('Jason.TimeMoneyIntro()', 'pro2desc', '<br> <br>A page I created with productivity in mind. Being productive generates  "time money" which can be spent for breaks (5 minutes per 1 productivity session).')
 
 }
 
