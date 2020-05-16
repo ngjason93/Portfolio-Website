@@ -1,440 +1,169 @@
 <!DOCTYPE html>
 <html>
 <style>
+.header{grid-area: header;}
+.mainimg {grid-area: mainimg; background: url('https://i.imgur.com/Fw3ZjKr.png'); background-position: center;
+  background-repeat: no-repeat; position:relative;
+  background-size: cover;}
+
+.portfoliobox {grid-area: portfoliobox;background: url('https://i.imgur.com/Ge7TRGT.png'); background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover  ; position:relative;}
+.portfoliobox1 {grid-area: portfoliobox1;background: url('https://i.imgur.com/55BWJVA.png'); background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; position:relative;}
+
+.footer {grid-area: footer;}
 
 
 
-  #container{
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-  }
 
-#aboutme {
-  /* visibility: hidden; */
-  display: none;
+.box{border: 1px solid black;
 }
-body{
-  background-color: #606060FF;
+#header{height: 100%; background: black;color: white; font-size: 2vw; text-align: center; font-family: 'Amatic SC', cursive; text-align: left;padding: 1rem;}
+#container{height: 100vh;}
+.covercontent{background: black; position: absolute; height: 100%; width:100%;}
+.covercontent:hover{opacity:.5;}
+.covercontent:active{opacity:0}
 
+/* .imgtext{color: white; position: absolute; top: 60%; left: 45%; padding: 1rem; } */
+#absoluteline {position: absolute; top: 60%; width: 100%; z-index: 3;}
+#absoluteline {list-style: none;}
+#absoluteline li{color: white; display:inline-block; width: 30vw; text-align: center; font-size: 1.4rem;   font-family: 'PT Sans', sans-serif;
 }
-#console{ grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start:6;
-  grid-row-end: 7;
-  padding: .5rem;
-  /* text-align: center; */
-  font-size: .85rem;
-  /* margin: auto; */
-  border-top: 8px solid gray;
-  background: black;
-  color: white;
-  display: none;
-  font-family: 'Share Tech Mono', monospace;
-  max-width: 425px;
+#navbar {position: absolute; right: 25px; color: white}
+#navbar ul{list-style: none; }
+#navbar li{display: inline-block;  font-size: 1.4vw; }
+#navbar a{text-decoration: none;  color: white; padding: 1vw;  font-family: 'Amatic SC', cursive;}
+#navbar div{text-decoration: none;  color: white; padding: 1vw;  font-family: 'Amatic SC', cursive; display:none;}
 
+#footer{display: inline-block; background: black; border-top: 1px solid white; padding:1vw }
+#footer li{text-align: center;list-style: none;display: inline-block;  font-size: 1vw; color: white; width: 10%;}
+.console {font-family: 'Share Tech Mono', monospace; z-index: 3;border-bottom: .3vh solid gray; margin-right: 11px;border-top:1vh solid gray;color: white;background: black; top: 11%; width: 100%; border-right: .1vh solid gray;}
+
+
+.wrapper{
+  display: grid;
+  /* grid-gap: 10px; */
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 10% 45% 25% 10%;
+
+  grid-template-areas:
+  "header header header"
+  "mainimg portfoliobox portfoliobox1"
+  "mainimg portfoliobox portfoliobox1"
+  "footer footer footer";
 }
-
-
-
-
-#Contact {
-  display:none;
-  grid-column-start:1;
-  grid-column-end: 6;
-}
-#Contact ul{
-  list-style: none;
-  margin: 0;
-  padding:0;
-  }
-#Contact li{
-  display: block;
-  text-decoration: none;
-  padding: .5rem;
-  font-size: 1.5rem;
-  margin: .5rem ;
-  border-radius: 1rem;
-  float: left;
-  background: #FFB732;
-  font-family: 'PT Sans', sans-serif;
-
-
-}
-#console2{
-  grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start:7;
-    grid-row-end: 8;
-    padding: .5rem;
-    /* text-align: center; */
-    font-size: .8rem;
-    /* margin: auto; */
-    background: black;
-    color: white;
-    display: none;
-    font-family: 'Share Tech Mono', monospace;
-    max-width: 425px;
+@media only screen and (max-width: 450px){
+  .wrapper{
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 60% 60% 60% 10%;
+    grid-gap: 1vh;
+    grid-template-areas:
+  'header'
+  'mainimg'
+  'portfoliobox'
+  'portfoliobox1'
+  'footer'}
+  .covercontent{opacity: .9;}
+  #absoluteline{display:none;}
+  #header{text-align: center; font-size: 7vw;}
+  #navbar div{display:none;}
+  #navbar a{font-size: 4vw;}
+  #footer li {font-size: 5vw; width: 25vw; padding: 1vw; font-family: 'Amatic SC', cursive;}
 
 }
-
-
-
-h1{
-  display: block;
-  text-align: center;
-  font-size: 1.42rem;
-  font-family: 'Share Tech Mono', monospace;
-  color: #D6ED17FF;
-  animation-name: colorin;
-  animation-duration: 2s;
-  background-color: black;
-
-}
-
-@keyframes colorin{
-  from {color: yellow; font-size: .1rem}
-  to {color:#606060FF;}
-}
-
-
-#link{
-  display: none;
-  font-size: .9 rem;
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 6;
-  grid-row-end: 7;
-
-}
-
-.picofme{
-  grid-column-start: 1;
-  grid-column-end:6;
-  grid-row-start:1;
-  grid-row-end: 6;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  max-width: 425px;
-
-}
-#imgbox {
-  grid-column-start: 1;
-  grid-column-end:6;
-  grid-row-start:1;
-  grid-row-end: 8;
-  border: 1px solid gray;
-  max-width: 400px;
-  display:none;}
-
-#kings{
-  width: 100%;
-  max-height: 440px;
-  display: none;
-  object-fit: stretch;
-  max-width: 425px;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 8;
-}
-
-
-#navbar {
-  border:0px;
-  text-decoration: none;
-  width: 100%;
-  list-style: none;
-  margin-top: 0px;
-  margin-left: -10px;
-  margin-right: -10px;
-  padding: 0px;
-  overflow: hidden;
-  cursor: pointer;
-  background: #D6ED17FF;
-  text-align: center;
-
-
-}
-#navbar li{
-  display: inline-block;
-  margin: 0px;
-  width: 30vw;
-
-
-}
-
-#navbar a{
-  display: inline-block;
-  font-family: 'PT Sans', sans-serif;
-
-  color: light gray;
-  text-align: center;
-  padding: 1.4rem;
-  /* border: 1px solid black; */
-  /* border-radius: 1.5rem; */
-  text-decoration: none;
-  text-align: center;
-  background-color: #D6ED17FF;
-  padding: auto;
-  font-size: 1.2rem;
-  /* border-right: 1px solid #606060FF; */
-
-
-}
-#navbar a:hover{
-  background-color: #606060FF;
-}
-#navbar a:active{
-  background-color: #606060FF;
-}
-.portex {
-  /* display:none; */
-  grid-column-start: 1;
-  grid-column-end:6;
-  grid-row-start:1;
-  grid-row-end: 8;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-
-}
-#kingsdesc {
-  display: none;
-  padding: 3px;
-  max-width: 420px;
-  font-size: 1rem;
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 6;
-  grid-row-end: 8;
-  animation-name: colorin;
-  color: black;;
-  animation-duration: 1s;
-  margin: .2rem;
-  font-family: 'PT Sans', sans-serif;
-  background: white;
-  border: 1px solid white;
-
-}
-
-
-
-
-#skills{
-  grid-row-start: 8;
-  grid-row-end: 10;
-  grid-column-start: 1;
-  grid-column-end: 6;
-  display:none
-
-}
-#skills ul{
-  list-style: none; /* Remove list bullets */
-  padding: 0;
-  margin: 0;
-
-
-}
-
-#skills li {
-  background: yellow;
-  display: inline-block;
-  border-radius: 1rem;
-  padding: .5rem;
-  margin: .1rem;
-}
-
-@media (max-width: 500px){
-  #kings{max-height: 400px;border: 1px solid pink;}
-}
-
-@media (min-width: 700px) and (max-width: 940px){
-  #container{grid-template-columns: 23% 425px 23%;}
-  .picofme{grid-column-start: 2; grid-column-end: 3;}
-  #console{grid-column-start: 2; grid-column-end: 3;}
-  #console2{grid-column-start: 2; grid-column-end: 3;}
-  #kings{grid-column-start: 2; grid-column-end: 3;}
-  #kingsdesc{grid-column-start: 2;grid-column-end: 3;}
-  #skills{grid-column-start: 2; grid-column-end: 3;}
-  #Contact{grid-column-start: 2; grid-column-end: 3;}
-}
-
-
-@media (min-width: 940px) and (max-width: 1400px){
-  #container {grid-template-columns: 50% 50%;}
-  .picofme{margin-left: 45px;}
-  #console{margin-left: 45px; font-size: 1.1rem;}
-  #console2{margin-left: 45px;font-size: 1.1rem;}
-  #kings {grid-column-start: 2; grid-column-end:3; }
-  #kingsdesc{grid-column-start: 2; grid-column-end:3; font-size: 1.2rem;}
-  #Contact{grid-row-start: 9;}
-  }
-
-@media (min-width: 1401px){
-  #container {grid-template-columns:40% 40% 20%;
-    grid-gap: 10px;}
-    h1{font-size: 2rem;}
-  #Contact {grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start:1;}
-  #aboutme{max-width: 500px;}
-  #kings{max-width: 500px; margin-left: 60px}
-  #console{max-width: 500px; font-size: 1.5rem;}
-  #console2{max-width: 500px;font-size: 1.3rem;}
-  #kingsdesc{max-width: 490px;margin-left: 60px; font-size: 1.4rem}
-  .picofme{margin-left: 45px;}
-  #console{margin-left: 45px;}
-  #console2{margin-left: 45px;}
-  #kings {grid-column-start: 2; grid-column-end:3; }
-  #kingsdesc{grid-column-start: 2; grid-column-end:3; }
-  }
-
-
-
 
 
 </style>
-
-
 <head>
   <title> Jason Ng | Developer </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
 
 </head>
 
-
-<header>
-    <ul id="navbar">
-      <li> <a href="#aboutme" onclick='unhide()'>About</a></li>
-      <li> <a href="#alsobroken"onclick='portfolioLoad()'>Portfolio  </a></li>
-      <li> <a href="#Contact"  onclick='showSocials()'>Contact</a></li>
-      <!-- <li> <img> Logo  </li> -->
-
-    </ul>
-
-</header>
-
 <body>
-  <h1> Jason Ng Web Developer </h1>
-<hr>
-<div id='container'>
-<img id='kings' src='https://i.imgur.com/55BWJVA.png'>
 
-<img id='mainimg' class='picofme'src='https://i.imgur.com/Fw3ZjKr.png', alt='Jason/Dev face'>
-<img id='aboutme'class='picofme' src='https://i.imgur.com/pGFw0sw.png', alt='aboutme'>
-<!-- <img src='https://i.imgur.com/A0yvOAF.png' alt='Jason/Dev face'> -->
-<div id='console'> </div>
-<div id='console2'> </div>
+  <div> <ul id="navbar">
+    <li> <div href="#" onclick='unhide()'>About</a></li>
+    <li> <div href="#"onclick='portfolioLoad()'>Portfolio  </a></li>
+    <li> <a href="#Contact"  onclick='showSocials()'>Contact</a></li></ul>
+  </div>
+  <div id='absoluteline'>
+    <ul>
+      <li> About Me </li>
+      <li> Kings Cup </li>
+      <li> Tomato Wallet </li>
+    </ul>
+  </div>
 
-<h2 class='prodesc' id='kingsdesc'> A game created when my friends and I wanted to play Kings Cup(drinking game) but did not have cards. The game works on mobile and desktop. Users swipe through or click a button for the next card. <a id='link'href='https://ngjason93.github.io/Kings-Browser-game/'>Link to game</a></h2>
+<div id='container' class='wrapper'>
+  <header class='box header'> <div id='header'> Jason Ng </div>
+  </header>
 
-<h2 id='skills'><ul>
-  <li>Python</li>
-  <li>JS</li>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>GitHub</li>
-  <li>Flask</li>
-  <li>AJAX</li>
-  <li>XML</li>
-  <li>SQLAlchemy</li>
-  <li>Sqlite</li>
-  <li>JSON</li>
-</ul></h2>
+  <div class='box mainimg'>
+     <div class='covercontent'>  <div class='console' id='console'></div></div>
+   </div>
+  <div class='box portfoliobox'>
+    <div class='covercontent' onclick='show1()'><div class='console' id='pro1desc' ></div></div>
+   </div>
+  <div class='box portfoliobox1'>
+    <div class='covercontent' onclick='show2()'><div class='console'id='pro2desc' ></div> </div>
+  </div>
 
-<div id='Contact'>
-   <ul>
-     <li><a href='https://github.com/ngjason93'> Github</a></li>
-     <li><a href='https://www.linkedin.com/in/jason-ng/'>Linkedin</li>
-     <li> <a href='https://ngjason93.github.io/Portfolio-Website/'> Portfolio </li>
-   </ul>
- </div>
+<footer id='footer' class='box footer'>
+  <li class='socials'> Github </li>
+  <li class='socials'> LinkedIn </li>
+  <li class='socials' id='Contact'> Contact </li>
+  </footer>
 
-
-
-
-</div>
-
-
-
-
-
-
-
+</body>
 
 <script>
+function showAboutme(text,id,after){
+  var today = new Date();
 
-function unhide(){
-  document.getElementById('aboutme').style.display= 'grid';
-  document.getElementById('mainimg').style.display= 'none';
-  document.getElementById('console').style.display= 'grid';
-  document.getElementById('console2').style.display= 'grid';
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  let datetime = date+', ' +time
+  console.log(datetime)
 
-
+  document.getElementById(id).innerHTML =  'Python 2.7.17 ('+datetime +') Type "help", "copyright", "credits" or "license" for more information.   <br>  >>>  '
+  var i = 0;
+  var txt = text
+  function typeWriter(input) {
+    if (i < txt.length) {
+      document.getElementById(id).innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+  typeWriter(txt)
   setTimeout(function(){
-    document.getElementById('console2').innerHTML= 'Hi my name is Jason, I am a Jr developer who enjoys hanging out with friends, playing basketball and working out. My skills are:';
-    document.getElementById('skills').style.display = 'grid';
-
-  },6000)
-  typeWriter(txt);
+    document.getElementById(id).innerHTML += after
+  },4000)
 }
 
-var i = 0;
-var txt = 'Jason = Person("Jason", aboutme).....             Jason.introduce() ......'; /* The text */
-function typeWriter(input) {
-  if (i < txt.length) {
-    document.getElementById("console").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, 100);
+setTimeout(function(){
+  showAboutme('Jason.introduce()','console','<br><br>  Hi my name is Jason, I am a junior front end developer who enjoys spending quality time with friends, watching basketball and working out. My skills include: HTML, CSS, JavaScript, AJAX, GitHub, Python, Flask, Sqlite <br> >>>')
+},1000)
+
+
+function show1(){
+  showAboutme('Jason.KingsIntro()','pro1desc','<br> <br>A game I created when my friends and I wanted to play Kings Cup but had no cards. Has swipe function for mobile and click through for desktop.');
+
   }
-}
 
-function hideall(){
-  document.getElementById('console').style.display='none';
-  document.getElementById('console2').style.display='none';
-  document.getElementById('aboutme').style.display='none';
-  document.getElementById('mainimg').style.display= 'none';
-
-
+function show2(){
+  showAboutme('Jason.TimeMoneyIntro', 'pro2desc', '<br> <br>A page I created with productivity in mind. Being productive generates  "time money" which can be spent for breaks (5 minutes per 1 productivity session).')
 
 }
-function portfolioLoad(){
-  var w = window.innerWidth;
-  console.log(w)
-  if (w<440||w<800){
-    document.getElementById('aboutme').style.display = 'none'
-    document.getElementById('mainimg').style.display = 'none'
-    console.log('gothere')
-  }
-  if (w>940){unhide()}
-  document.getElementById('kings').style.display = 'grid';
-  document.getElementById('kingsdesc').style.display ='block';
-  document.getElementById('link').style.display ='block';
-}
-var wi = window.innerWidth;
 
-if (wi> 942){
-  portfolioLoad();
-  console.log('gothere');
-  unhide();
-  showSocials();
-  document.getElementById('navbar').style.display='none';
-}
-
-
-
-
-function showSocials(){
-  document.getElementById('Contact').style.display= 'grid';
-
-}
 
 </script>
 </html>
