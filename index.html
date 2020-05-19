@@ -6,12 +6,12 @@
   background-repeat: no-repeat; position:relative;
   background-size: cover;}
 
-.portfoliobox {grid-area: portfoliobox;background: url('https://i.imgur.com/Ge7TRGT.png'); background-position: center;
+.portfoliobox {grid-area: portfoliobox;background: url('https://i.imgur.com/UTp617x.png'); background-position: center;
+  background-repeat: no-repeat;background-size: 300px 500px;  ; position:relative;;
+}
+.portfoliobox1 {grid-area: portfoliobox1;background: url('https://i.imgur.com/d9YtxxJ.png'); background-position: center;
   background-repeat: no-repeat;
-  background-size: cover  ; position:relative;}
-.portfoliobox1 {grid-area: portfoliobox1;background: url('https://i.imgur.com/55BWJVA.png'); background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; position:relative;}
+     background-size: 400px 500px; position:relative;}
 
 .footer {grid-area: footer;}
 
@@ -54,6 +54,12 @@
   "mainimg portfoliobox portfoliobox1"
   "footer footer footer";
 }
+
+#pro1desc:hover {opacity: 1;}
+#pro2desc:hover {opacity: 1;}
+#projlink {font-size: 1.1vw; z-index: 3; background: white;border: 1px solid white; color: black; padding: .2vw; border-radius: .1vw; padding-bottom: 0;}
+#proj1link {font-size: 1.1vw; z-index: 3; background: white;border: 1px solid white; color: black; padding: .2vw; border-radius: .1vw; padding-bottom: 0;}
+
 @media only screen and (max-width: 450px){
   .wrapper{
     grid-template-columns: 100%;
@@ -65,17 +71,46 @@
   'portfoliobox'
   'portfoliobox1'
   'footer'}
-  .covercontent{opacity: .9;}
+  /* .covercontent{opacity: .9;} */
   #absoluteline{display:none;}
-  #header{text-align: center; font-size: 7vw;}
+  #header{text-align: center; font-size: 12vw;}
   #navbar div{display:none;}
   #navbar a{font-size: 4vw;}
   #footer button {font-size: 5vw; width: 25vw; padding: 1vw; font-family: 'Amatic SC', cursive; }
+  #proj1link {font-size: 3vw}
+  #projlink {font-size: 3vw}
+
+
+
 
 }
-#pro1desc:hover {opacity: 1;}
-#pro2desc:hover {opacity: 1;}
-#projlink {font-size: 1.1vw; z-index: 3; background: white;border: 1px solid white; color: black; padding: .2vw; border-radius: .1vw; padding-bottom: 0;}
+@media only screen and (min-width: 1400px){
+  .portfoliobox{background-size:500px 500px;}
+  .portfoliobox1{background-size: 500px 500px;}
+  .console{font-size: 1.5vw;}
+  #absoluteline li{font-size: 1.5vw;}
+}
+@media only screen and (min-width: 451px) and (max-width: 1000px){
+  .wrapper{
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 60% 60% 60% 10%;
+    grid-gap: 1vh;
+    grid-template-areas:
+  'header'
+  'mainimg'
+  'portfoliobox'
+  'portfoliobox1'
+  'footer'}
+  /* .covercontent{opacity: .9;} */
+  #absoluteline{display:none;}
+  #header{text-align: center; font-size: 6vw;}
+  #navbar div{display:none;}
+  #navbar a{font-size: 4vw;}
+  #footer button {font-size: 5vw; width: 25vw; padding: 1vw; font-family: 'Amatic SC', cursive; }
+  #proj1link {font-size: 3vw}
+  #projlink {font-size: 3vw}
+}
+
 </style>
 <head>
   <title> Jason Ng | Developer </title>
@@ -156,10 +191,10 @@ setTimeout(function(){
 
 
 function show1(){
-  showAboutme('Jason.KingsDescription()','pro1desc','<br> <br>A game I created when my friends and I wanted to play Kings Cup but had no cards. Has swipe function for mobile and click through for desktop. <br> <br> <a id="projlink" href="https://ngjason93.github.io/Kings-Browser-game/"> Link here </a>');
   document.getElementById('removeonclick').onclick='null';
-  console.log(document.getElementById('removeonclick').onclick)
   document.getElementById('abpro1desc').onclick='null';
+  showAboutme('Jason.KingsDescription()','pro1desc','<br> <br>A game I created when my friends and I wanted to play Kings Cup but had no cards. Has swipe function for mobile and click through for desktop. <br> <br><br> <a id="projlink" href="https://ngjason93.github.io/Kings-Browser-game/"> Link here </a>');
+
 
 
 
@@ -167,12 +202,19 @@ function show1(){
   }
 
 function show2(){
-  showAboutme('Jason.TomatoDescription()', 'pro2desc', '<br> <br>A page I created with productivity in mind. Being productive generates  "time money" which can be spent for breaks (5 minutes per 1 productivity session).')
   document.getElementById('remove1onclick').onclick='null';
   document.getElementById('abpro2desc').onclick='null';
+  showAboutme('Jason.TomatoDescription()', 'pro2desc', '<br> <br>A page I created with productivity in mind. Being productive generates  "tomato money" which can be spent for breaks.<br><br><br> <a id="proj1link" href="https://ngjason93.github.io/TomatoWallet/"> Link here </a>')
+
 
 }
+let width = window.innerWidth
+console.log(width)
+if (width<1000){
+  let timeout = setTimeout(show1,5000)
+  let timeout1 = setTimeout(show2,10000)
 
+}
 
 </script>
 </html>
